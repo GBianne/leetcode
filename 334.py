@@ -32,7 +32,7 @@ Follow up: Could you implement a solution that runs in O(n) time complexity and 
 
 # there might be (is probably) a clearer algorithm, but i like this :)
 
-# time complexity is O(n) as the list is only gone through once
+# time complexity is O(n), the list is only gone through once with an O(1) amount of operations in each loop
 # space complexity is O(1), only three integers and one string are stored regardless of nums length
 
 def increasingTriplet(nums):
