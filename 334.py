@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
+
+Follow up: Could you implement a solution that runs in O(n) time complexity and O(1) space complexity?
 """
 
 # naive algorithm: loop on nums, store nums[i], loop on nums[i+1:] to find nums[j] > nums [i], loop on nums[j+1:] etc
@@ -31,17 +33,7 @@ Given an integer array nums, return true if there exists a triple of indices (i,
 # there might be (is probably) a clearer algorithm, but i like this :)
 
 # time complexity is O(n) as the list is only gone through once
-# space complexity: - 1-2 max evaluations in a list of three elements (3-6 operations)
-#                   - 0-1 integer comparison
-#                   - 1   str assignment
-#                   - 0-1 str comparison
-#                   - 0-2 integer comparisons
-#                   - 0-1 str assignment
-#                   -   1 str comparison
-#                   - 0-3 integer assignments
-#                   - 1-2 integer comparisons
-#               total: 1-2 max evaluations in a list of three, 1-5 int comparisons, 1-3 str comparisons, 1-5 assignments
-# O(n) time, O(1) space
+# space complexity is O(1), only three integers and one string are stored regardless of nums length
 
 def increasingTriplet(nums):
     
