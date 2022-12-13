@@ -31,10 +31,10 @@ Given an integer n, return the largest number that is less than or equal to n wi
 # and finally s = 113344466
 
 # the 0-case
-# the solution above is only valid if the digits of n do not contain any 0, else it would return only zeros
+# the solution above is only valid if the digits of n do not contain any 0, else it would return zeros in front
 # the highest MID would then be (k-1) occurrences of 9
 # n = 100, s = 99
-# s = 99990999, s = 9999999
+# n = 99990999, s = 9999999
 
 def monotoneIncreasingDigits(n):
     
