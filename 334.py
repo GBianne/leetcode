@@ -14,7 +14,7 @@ Given an integer array nums, return true if there exists a triple of indices (i,
 #   => a is irrelevant and can be erased. any new value will be pushed to the right, (a,b,c) <- (b,c,new). action = push
 # 2. b = max(a,b,c)
 #   a. a < c
-#     => b is irrelevant and can be switched with c, then replaced. (a,b,c) <- (a,c,new). action = extract_b
+#     => b is irrelevant and can be switched with c, then replaced. (a,b,c) <- (a,c,new). action = dance
 #   b. a >= c
 #     => if new <= c, then c is irrelevant and can be replaced.(a,b,c) <- (a,b,new). action = replace
 #        if new > c, then only the lower sequence out of (a,b) and(c,new) will be kept
