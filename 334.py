@@ -14,7 +14,7 @@ Given an integer array nums, return true if there exists a triple of indices (i,
 #   => a is irrelevant and can be erased. any new value will be pushed to the right, (a,b,c) <- (b,c,new). action = push
 # 2. b = max(a,b,c)
 #   a. a < c
-#     => b is irrelevant and can be switched with c, then replaced. (a,b,c) <- (a,c,new). action = dance
+#     => b is irrelevant and can be switched with c, then replaced. (a,b,c) <- (a,c,new). action = extract_b
 #   b. a >= c
 #     => if new <= c, then c is irrelevant and can be replaced.(a,b,c) <- (a,b,new). action = replace
 #        if new > c, then only the lower sequence out of (a,b) and(c,new) will be kept
@@ -25,7 +25,7 @@ Given an integer array nums, return true if there exists a triple of indices (i,
 #   a. a < b
 #       => since c is the max and b isn't, then we have a < b < c. return true!
 #   b. a >= b
-#       => either a or b is irrelevant. replacing b leads to the same action as 2.b. action = dance
+#       => a is irrelevant. action = push
 # - continue until the end of the list is reached, then return false
 
 # there might be (is probably) a clearer algorithm, but i like this :)
@@ -72,7 +72,7 @@ def increasingTriplet(nums):
                 # yay - note: this will only be reached if the initial subsequence is ITS
                 return True
             else:
-                action = "dance"
+                action = "push"
         
         # unknown action? decide by comparing the new value to c and b
         if action == "unknown":
@@ -108,4 +108,4 @@ print(increasingTriplet([5,4,3,2,1]))
 
 print(increasingTriplet([2,1,5,0,4,6]))
 
-print(increasingTriplet([9,8,7,6,2,6,5,4,3,4,3,2,1,2,2,0]))
+print(increasingTriplet([5,1,7,3,4]))
