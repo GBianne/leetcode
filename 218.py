@@ -68,13 +68,11 @@ def getSkyline(buildings):
                 skyline.append([x,0])
                 skyHeight = 0
             # are we done? if we reached the end of the buildings loop without broke or found = True, we are!
-            # warning - there is at least one building, so the skyline cannot be empty
-            # this condition is needed to not stop if the first building starts at x > 0
-            if not broke and len(skyline) > 0:
+            if not broke:
                 stop = True
         
     return skyline
 
-#print(getSkyline([[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]]))
-#print(getSkyline([[0,2,3],[2,5,3]]))
+print(getSkyline([[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]]))
+print(getSkyline([[0,2,3],[2,5,3]]))
 print(getSkyline([[1,5,7],[3,4,15],[6,17,10],[6,15,11],[8,45,4],[12,32,8],[21,23,5],[21,23,22],[31,39,14],[32,36,15],[33,36,19],[41,44,20],[43,47,5],[55,65,42]]))
